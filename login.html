@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        nav{
+      display: flex;
+      width: 100%;
+      position: fixed;
+      justify-content: space-between;
+    }
+    nav > div:nth-child(1){
+      display: flex;
+      width: 280px;
+      justify-content: space-evenly;
+    }
+    nav > div:nth-child(1) > h1{
+      font-size: 70px;
+      font-weight: 200;
+    }
+    nav > div:nth-child(2){
+      display: flex;
+      width: 33%;
+      align-items: center;
+      justify-content: space-evenly;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    nav > div:nth-child(2) > a{
+      text-decoration: none;
+      color: black;
+    }
+    nav > div:nth-child(2) > a:nth-child(1){
+      width: 100px;
+      padding: 5px;
+      text-align: end;
+      border-bottom: 1px solid;
+    }
+        .content{
+            display: flex;
+            width: 100%;
+            height: 50vh;
+            justify-content: space-evenly;
+        }
+        .content > div{
+            padding: 10px;
+            margin-top: 4cm;
+        }
+        .content h1{
+            color: rgb(33, 31, 31);
+            padding: 10px 0;
+        }
+        .box1  p{
+            margin: 12% 0;
+            color: rgb(67, 63, 63);
+        }
+        .box2 > p{
+            margin: 6.8% 0;
+            font-weight: lighter;
+            color: rgb(67, 63, 63);
+        }
+        button{
+            width: 100%;
+            height: 40px;
+            background-color: black;
+            color: whitesmoke;
+        }
+        input{
+            width: 100%;
+            height: 35px;
+            border: 0;
+            border-bottom: 1px solid;  
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div>
+        <h2 onclick="opennav()">|||</h2>
+        <h1>ZAIRA</h1>
+        </div>
+        <div>
+        <a href="#">SEARCH</a>
+        <a href="#"><p>LOGI IN</p></a>
+        <a href="#"><p>HELP</p></a>
+        <a href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bag-plus" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z"/>
+            <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/>
+          </svg>
+        </a>
+        </div>
+      </nav>
+      <!--container-->
+    <div class="content">
+        <div class="box1">
+    <form>
+        <h1>LOG IN</h1>
+        <input type="text" placeholder="E-MAIL"/> <br>
+        <p id="output1"></p>
+        <input type="password" placeholder="PASSWORD"/>
+        <p id="output2"></p>
+        <p>HAVE YOU FORGATTEN PASSWORD?</p>
+        <button>LOG IN</button>
+    </form>
+    </div>
+    <div class="box2">
+        <h1>REGISTER</h1>
+        <p>IF YOU STILL DON'T HAVE A <b>ZARA.COM</b> ACCOUNT, USE THIS OPTION TO <br>
+            ACCESS THE REGISTRATION FORM.
+        </p>
+        <p>BY GIVING US YOUR DETAILS, PURCHASING IN <b>ZARA.COM</b> WILL BE FASTER <br>
+            AND AN ENJOYABLE EXPERIENCE.
+        </p>
+        <button>CREATE ACCOUNT</button>
+    </div>
+    </div>
+</body>
+</html>
