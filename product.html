@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZAIRA PRODUCT</title>
+    <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    body{
+        font-family: 'Times New Roman', Times, serif;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    nav{
+      display: flex;
+      width: 100%;
+      top: 0;
+      z-index: 5;
+      position: fixed;
+      background-color: white;
+      justify-content: space-between;
+    }
+    nav > div:nth-child(1){
+      display: flex;
+      width: 280px;
+      justify-content: space-evenly;
+    }
+    nav > div:nth-child(1) > a{
+      text-decoration: none;
+      color: black;
+    }
+    nav > div:nth-child(1) > a > h1{
+      font-size: 70px;
+      font-weight: 200;
+    }
+    nav > div:nth-child(2){
+      display: flex;
+      width: 33%;
+      align-items: center;
+      justify-content: space-evenly;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    nav > div:nth-child(2) > a{
+      text-decoration: none;
+      color: black;
+    }
+    nav > div:nth-child(2) > a:nth-child(1){
+      width: 100px;
+      padding: 5px;
+      text-align: end;
+      border-bottom: 1px solid;
+    }
+    .slide{
+                width:0px;
+                height: 100%;
+                background-color: rgb(255, 255, 255);
+                position: fixed;
+                top: 0;
+                z-index: 10;
+                overflow: hidden;
+                transition: 0.5s;
+            }
+            .slide_header{
+              margin: 1cm auto 0.5cm auto;
+              width: 80%;
+              display: flex;
+              justify-content: space-evenly;
+            }
+            .slide > div > a{
+              font-size: 18px;
+              text-decoration: none;
+              color: black;
+            }
+            #slide_roller{
+              width: 80%;
+              height: 78%;
+              padding: 15px;
+              display: block;
+              overflow-y: scroll;
+              margin: 0 20px;
+              scroll-behavior: smooth ;
+            }
+            #slide_roller::-webkit-scrollbar{
+              display: none;
+            }
+            #slide_roller > p{
+              margin: 5px;
+              font-size: 12px;
+              font-family: Arial, Helvetica, sans-serif;
+            }
+            #slide_roller > i{
+              color: rgb(252, 106, 130);
+            }
+            #slide_roller > h5{
+              margin: 1cm 0;
+              font-weight: 100;
+            }
+            .closebtn{
+                float: right;
+                margin: 0.7cm;
+                text-decoration: none;
+                font-size: 30px;
+                color: black;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            .openbtn{
+                background-color: #111;
+                cursor: pointer;
+                color: white;
+                padding: 15px;
+                font-size: 20px;
+            }
+    </style>
+    <style>
+        #content{
+            /* border: 1px solid red; */
+            width: 99%;
+            height: 80%;
+            display: flex;
+            margin-top: 3cm;
+            justify-content: space-evenly;
+        }
+        #content > div:nth-child(1){
+            /* border: 1px solid blue; */
+            width: 20%;
+        }
+        #content > div:nth-child(2){
+            /* border: 1px solid blue; */
+            width: 30%;
+        }
+        #content > div:nth-child(3){
+            /* border: 1px solid blue; */
+            width: 20%;
+        }
+        #content > div:nth-child(1) > h4{
+            font-size: 15px;
+            margin: 5px;
+            font-weight: 200;
+        }
+        #content > div:nth-child(1) > p{
+            font-size: 13px;
+            margin: 12px 5px;
+            font-weight: 100;
+            color: rgb(49, 46, 46);
+        }
+        img{
+            width: 100%;
+            height: 420px;
+            border: 1px solid black;
+        }
+        .info > div{
+            font-weight: 100;
+            display: flex;
+
+        }
+        .info > p{
+            color: rgb(109, 106, 106);
+            font-size: 12px;
+            margin: 10px 0;
+        }
+        .info > div{
+            display: flex;
+            justify-content: space-between;
+            font-weight: 200;
+            margin: 4px 0;
+        }
+        #container:hover{
+          transform: scale(1.07);
+        }
+        #container{
+          transition: transform 0.5s;
+        }
+        /* #container:hover{
+          transform: translateY(-10px);
+        }*/
+
+        .info > h5{
+            font-size: 12px;
+            margin: 5px 0;
+            font-weight: 100;
+            color: rgb(49, 46, 46);
+        }
+        .info > button{
+            width: 100%;
+            height: 35px;
+            background-color: black;
+            color: whitesmoke;
+        }
+        #nameChanger{
+            font-size: 15px;
+            font-weight: 100;
+        }
+        #cart{
+          cursor: pointer;
+        }
+        /* #container{
+          overflow: scroll;
+          scroll-snap-type: y mandatory;
+        } */
+        /* #feb{
+          padding-bottom: 3px;
+          border-bottom: 2px solid black;
+        } */
+    </style>
+        <style>
+          @media screen and (min-width:451px) and (max-width:770px){
+  nav > div:nth-child(1) {
+    width: 250px;
+  }
+  nav > div:nth-child(2) {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+    padding: 20px;
+  }
+  nav > div:nth-child(2) > a:nth-child(1){
+  width: 70px;
+  padding: 5px;
+  text-align: end;
+  border-bottom: 1px solid;
+}
+nav > div:nth-child(2) > a:nth-child(2){
+  display: none;
+}
+nav > div:nth-child(1) > h1{
+  font-size: 50px;
+  font-weight: 200;
+}
+nav > div:nth-child(2) > a{
+  text-decoration: none;
+  color: black;
+  font-size: 12px;
+}
+#content{
+  display: block;
+}
+#content > div:nth-child(1){
+  display: none;
+}
+#content > div:nth-child(2){
+  width: 50%;
+  height: 55vh;
+  margin: auto;
+}
+#content > div:nth-child(3){
+  width: 95%;
+  margin: 20px auto 0 auto;
+}
+img{
+  width: 100%;
+  height: 100%;
+}
+
+}
+@media screen and (min-width:100px) and (max-width:450px){
+nav > div:nth-child(1) {
+  width: 200px;
+}
+nav > div:nth-child(2) {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-end;
+  padding: 15px;
+}
+  nav > div:nth-child(2) > a:nth-child(1){
+  width: 60px;
+  padding: 5px;
+  text-align: end;
+  border-bottom: 1px solid;
+}
+  nav > div:nth-child(2) > a:nth-child(2){
+    display: none;
+  }
+  nav > div:nth-child(1) > a > h1{
+  font-size: 35px;
+  font-weight: 200;
+}
+nav > div:nth-child(2) > a{
+  text-decoration: none;
+  color: black;
+  font-size: 10px;
+}
+#content{
+  display: block;
+}
+#content > div:nth-child(1){
+  display: none;
+}
+#content > div:nth-child(2){
+  width: 95%;
+  height: 60vh;
+  margin: auto;
+}
+#content > div:nth-child(3){
+  width: 95%;
+  margin: 20px auto 0 auto;
+}
+img{
+  width: 100%;
+  height: 100%;
+}
+.info  p,h5{
+  display: none;
+}
+#vanish{
+  display: none;
+}
+.info h3{
+  margin: 15px 0;
+}
+}
+</style>
+</head>
+<body>
+    <div id="myslide" class="slide">
+        <a href="#" class="closebtn" onclick="closenav()">X</a>
+        <div class="slide_header">
+        <a href="./index.html">WOMAN</a>
+        <a href="./men.html">MEN</a>
+        <a href="./kids.html">KIDS</a>
+        <!-- <a href="#">ZAIRA ORIGINAL</a> -->
+        </div>
+        <div id="slide_roller">
+          <p>NEW</p>
+          <p>PARTY</p>
+          <p>BEST SELLER new</p>
+          <p>BASIC</p>
+          <p>KNITWEAR</p>
+          <p>COAT | PUFFER JACKETS</p>
+          <p>DRESSES | JUMPSUITS</p>
+          <p>SHIRTS</p>
+          <p>TOPS</p>
+          <p>TROUSERS</p>
+          <p>JEANS</p>
+          <p>BLAZERS</p>
+          <p>JHACKETS | OVERSHIRTS</p>
+          <p>SWEATSHIRTS</p>
+          <P>T-SHIRTS</P>
+          <p>WAISTCOATS | GILETS</p>
+          <p>SKIRTS | SORTS</p>
+          <p>CO-ORD SHORTS</p>
+          <p>SUITS</p>
+          <p>ACCESSORIES</p>
+          <p>SHOES</p>
+          <p>BAGS</p>
+          <p>PERFUMES</p>
+          <p>BEAUTY</p>
+          <i>SPEACIAL PRICE</i>
+          <p>GIFT IDEAS new</p>
+          <h3>SPEACIAL EDITION</h3>
+          <h5>GIFT CARD</h5>
+          <h5>JOIN LIFE</h5>
+          <a href="./login.html">LOGIN</a>
+        </div>
+    </div>
+      <!--navbar part-->
+    <nav>
+        <div>
+        <h2 onclick="opennav()">|||</h2>
+        <a href="./index.html"><h1>ZAIRA</h1></a>
+        </div>
+        <div>
+        <a href="search.html">SEARCH</a>
+        <a href="login.html"><p>LOGI IN</p></a>
+        <a href="./help.html"><p>HELP</p></a>
+        <a href="./cart.html">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bag-plus" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z"/>
+            <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/>
+          </svg>
+        </a>
+        </div>
+      </nav>
+
+      <div id="content">
+        <div>
+            <h4>METERIALS, CARE AND ORIGIN</h4>
+            <h4>METERIALS</h4>
+            <p>We work with monitoring programmes <br>
+                to ensure compliance with our social, <br>
+                environmental and health and safety <br>
+                standards for our garments.
+            </p>
+            <p>To assess compliance, we have <br>
+                developed a programme of audits and <br>
+                continuous improvement plans.
+            </p>
+            <h4>OUTER SHELL</h4>
+            <p>100% polyester</p>
+            <h4>LINING</h4>
+            <p>100% POLYESTER</p>
+        </div>
+        <div id="container">
+            <!-- <img src="https://static.zara.net/photos///2022/I/0/1/p/0387/195/611/2/w/750/0387195611_6_2_1.jpg?ts=1668424768342" alt=""> -->
+        </div>
+        <div class="info">
+        <div><h2 id="nameChanger"></h2>
+            <a href=""><svg xmlns="http://www.w3.org/2000/svg" id="feb" width="16" height="16" fill="currentColor" class="bi bi-bookmark" viewBox="0 0 16 16">
+                <path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"/>
+                </svg>
+            </a>
+        </div>
+        <p>Blazer-style dress featuring a lapel collar, long <br>
+            sleeves with pronounced shoulders, gathered <br>
+            detail at the front and invisible side zip fastening.
+        </p>
+        <h3 id="pricechange"></h3>
+        <h6>MRP Incl. of all taxes</h6>
+        <hr>
+        <div id="vanish">XS</div>
+        <div>
+            <p>S</p>
+            <p>Similar Product</p>
+        </div>
+        <div>
+            <p>M</p>
+            <p>Similar Product</p>
+        </div>
+        <div>
+            <p>L</p>
+            <p>Similar Product</p>
+        </div>
+        <div>
+            <p>XL</p>
+            <p>Similar Product</p>
+        </div>
+        <hr>
+        <div>
+            <p>FIND YOUR SIZE</p>
+            <p>SIZE GUIDE</p>
+        </div>
+        <h5>FIND YOUR SIZE</h5>
+        <h5>SIZE GUIDE</h5>
+        <button id="cart">ADD TO CART</button>
+        <!-- <i>PRODUCT ADDED TO CART</i> -->
+        <p>CHECK IN-STORE AVAILABILITY</p>
+        <P>DELIVERY, EXCHANGES AND RETURN</P>
+        </div>
+      </div>
+
+</body>
+<script>
+    let product = JSON.parse(localStorage.getItem("key"))||[];
+    let container = document.getElementById("container");
+    let nameChanger = document.getElementById("nameChanger");
+    let pricechange = document.getElementById("pricechange");
+    let cart = document.getElementById("cart");
+
+    console.log(cart.innerText)
+
+    let linke = product[product.length-1]["img"];
+    let productName = product[product.length-1]["name"];
+    let productPrice = product[product.length-1]["price"];
+
+    let image = document.createElement("img");
+    image.src = linke;
+    let namee = document.createElement("h2");
+    namee.innerText = productName;
+    let price = document.createElement("h4");
+    price.innerText = productPrice;
+
+
+    container.append(image);
+    nameChanger.append(namee);
+    pricechange.append(price);
+
+    cart.addEventListener("click",()=>{
+          let cartdata = JSON.parse(localStorage.getItem("cart"))||[];
+          // console.log(product[product.length-1]["id"])
+          let cartflag = false
+          for(let i=0;i<cartdata.length;i++){
+            if(cartdata[i].id===product[product.length-1]["id"]){
+              cartflag = true;
+              break;
+            }
+            
+          }
+          if(cartflag == true){
+            cart.innerText = "ALREADY ADDED";
+            console.log("Product Already in Cart");
+          }
+          else{
+              cartdata.push(product[product.length-1])
+              localStorage.setItem("cart",JSON.stringify(cartdata));
+              console.log("Product Added To Cart")
+              cart.innerText = "ADDED";
+            }
+        })
+
+    /*side bar*/
+    function opennav(){
+    let match = window.matchMedia("(max-width:750px)").matches;
+
+    console.log(match)
+    if(match==false){
+      document.getElementById("myslide").style.width="40%";
+    }
+    else if(match==true){
+      document.getElementById("myslide").style.width="100%"
+    }
+  }
+
+  function closenav(){
+      document.getElementById("myslide").style.width="0"
+  }
+</script>
+</html>
