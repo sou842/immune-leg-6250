@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZAIRA CART</title>
+    <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    body{
+        font-family: 'Times New Roman', Times, serif;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    nav{
+      display: flex;
+      width: 100%;
+      top: 0;
+      z-index: 5;
+      position: fixed;
+      background-color: white;
+      justify-content: space-between;
+    }
+    nav > div:nth-child(1){
+      display: flex;
+      width: 280px;
+      justify-content: space-evenly;
+    }
+    nav > div:nth-child(1) > a{
+      text-decoration: none;
+      color: black;
+    }
+    nav > div:nth-child(1) > a > h1{
+      font-size: 70px;
+      font-weight: 200;
+    }
+    nav > div:nth-child(2){
+      display: flex;
+      width: 33%;
+      align-items: center;
+      justify-content: space-evenly;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    nav > div:nth-child(2) > a{
+      text-decoration: none;
+      color: black;
+    }
+    nav > div:nth-child(2) > a:nth-child(1){
+      width: 100px;
+      padding: 5px;
+      text-align: end;
+      border-bottom: 1px solid;
+    }
+    </style>
+    <style>
+        #information{
+            margin-top: 3cm;
+            display: flex;
+            font-size: 17px;
+            font-weight: 200;
+        }
+        #information > h2{
+          display: flex;
+            margin: 0 1cm;
+        }
+      #conte{
+        width: 90%;
+        display: grid;
+        margin: auto;
+        grid-template-columns: repeat(5,1fr);
+        text-align: center;
+        gap: 15px;
+      }
+      #conte > div{   
+        padding: 15px;
+      }
+      img{
+        width: 100%;
+      }
+      #count{
+        display: flex;
+      }
+    </style>
+    <style>
+          @media screen and (min-width:451px) and (max-width:770px){
+      nav > div:nth-child(1) {
+        width: 250px;
+      }
+      nav > div:nth-child(2) {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: flex-end;
+        padding: 20px;
+      }
+      nav > div:nth-child(2) > a:nth-child(1){
+      width: 70px;
+      padding: 5px;
+      text-align: end;
+      border-bottom: 1px solid;
+    }
+      nav > div:nth-child(2) > a:nth-child(2),
+      nav > div:nth-child(2) > a:nth-child(3){
+        display: none;
+      }
+      .bottom_part{
+        display: none;
+      }
+      nav > div:nth-child(1) > h1{
+      font-size: 50px;
+      font-weight: 200;
+    }
+    nav > div:nth-child(2) > a{
+      text-decoration: none;
+      color: black;
+      font-size: 12px;
+    }
+    #conte{
+        grid-template-columns: repeat(2,1fr);
+      }
+    }
+
+  
+    @media screen and (min-width:100px) and (max-width:450px){
+      nav > div:nth-child(1) {
+        width: 200px;
+      }
+      nav > div:nth-child(2) {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: flex-end;
+        padding: 15px;
+      }
+      nav > div:nth-child(2) > a:nth-child(1){
+      width: 60px;
+      padding: 5px;
+      text-align: end;
+      border-bottom: 1px solid;
+    }
+      nav > div:nth-child(2) > a:nth-child(2),
+      nav > div:nth-child(2) > a:nth-child(3){
+        display: none;
+      }
+      .bottom_part{
+        display: none;
+      }
+      nav > div:nth-child(1) > h2{
+        font-size: 20px;
+      }
+      nav > div:nth-child(1) > a > h1{
+      font-size: 45px;
+      font-weight: 200;
+    }
+    nav > div:nth-child(2) > a{
+      text-decoration: none;
+      color: black;
+      font-size: 10px;
+    }
+    #conte{
+        grid-template-columns: repeat(1,1fr);
+      }
+    }
+    </style>
+</head>
+<body>
+    <nav>
+        <div>
+        <a href="./index.html"><h1>ZAIRA</h1></a>
+        </div>
+        <div>
+        <a href="search.html">SEARCH</a>
+        <a href="login.html"><p>LOGI IN</p></a>
+        <a href="./help.html"><p>HELP</p></a>
+        <a href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bag-plus" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z"/>
+            <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/>
+          </svg>
+        </a>
+        </div>
+      </nav>
+    <!--information-->
+
+    <div id="information">
+        <h2>CART (<p id="count"></p>)</h2>
+    </div>
+    <div id="conte"></div>
+</body>
+<script>
+    let cartdata = JSON.parse(localStorage.getItem("cart"))||[];
+    let conte = document.getElementById("conte")
+    let count =document.getElementById("count")
+
+    // console.log(cartdata["name"]);
+    // console.log(cartdata.name);
+
+    count.innerText = cartdata.length;
+
+    display(cartdata)
+
+    function display(data){
+      conte.innerHTML = null
+      data.forEach((element,index)=>{
+        let div = document.createElement("div");
+        let img = document.createElement("img");
+        let name = document.createElement("h2");
+        let price = document.createElement("h4");
+
+        // img.style.border = "1px solid black"
+        img.src = element.img;
+        name.innerText = element.name;
+        name.style.fontSize = "12px";
+        price.innerText = element.price;
+
+        div.append(img,name,price);
+        conte.append(div)
+      })
+      }
+</script>
+</html>

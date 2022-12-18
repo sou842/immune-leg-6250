@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>ZAIRA India I New Collection</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  
   <style>
     *{
       margin: 0;
@@ -27,7 +29,11 @@
       font-family: Arial, Helvetica, sans-serif;
       cursor: pointer;
     }
-    nav > div:nth-child(1) > h1{
+    nav > div:nth-child(1) > a{
+      text-decoration: none;
+      color: black;
+    }
+    nav > div:nth-child(1)> a > h1{
       font-size: 70px;
       font-weight: 200;
     }
@@ -146,7 +152,7 @@
     }
     @media screen and (min-width:451px) and (max-width:770px){
       nav > div:nth-child(1) {
-        width: 200px;
+        width: 250px;
       }
       nav > div:nth-child(2) {
         display: flex;
@@ -205,7 +211,7 @@
   
     @media screen and (min-width:100px) and (max-width:450px){
       nav > div:nth-child(1) {
-        width: 150px;
+        width: 200px;
       }
       nav > div:nth-child(2) {
         display: flex;
@@ -223,14 +229,14 @@
       nav > div:nth-child(2) > a:nth-child(3){
         display: none;
       }
-      .container > div:nth-child(1){
-        image-orientation: flip;
-      }
       .bottom_part{
         display: none;
       }
-      nav > div:nth-child(1) > h1{
-      font-size: 35px;
+      nav > div:nth-child(1) > h2{
+        font-size: 20px;
+      }
+      nav > div:nth-child(1) > a > h1{
+      font-size: 45px;
       font-weight: 200;
     }
     nav > div:nth-child(2) > a{
@@ -272,7 +278,7 @@
     .slide{
                 width:0px;
                 height: 100%;
-                background-color: rgba(255, 255, 255, 0.833);
+                background-color: rgba(255, 255, 255, 0.866);
                 position: fixed;
                 z-index: 1;
                 overflow: hidden;
@@ -292,15 +298,26 @@
             #slide_roller{
               width: 80%;
               height: 78%;
-              padding: 12px;
+              padding: 15px;
               display: block;
               overflow-y: scroll;
-              margin: auto;
+              margin: 0 20px;
+              scroll-behavior: smooth ;
+            }
+            #slide_roller::-webkit-scrollbar{
+              display: none;
             }
             #slide_roller > p{
               margin: 5px;
               font-size: 12px;
               font-family: Arial, Helvetica, sans-serif;
+            }
+            #slide_roller > i{
+              color: rgb(252, 106, 130);
+            }
+            #slide_roller > h5{
+              margin: 1cm 0;
+              font-weight: 100;
             }
             .closebtn{
                 float: right;
@@ -323,10 +340,10 @@
   <div id="myslide" class="slide">
     <a href="#" class="closebtn" onclick="closenav()">X</a>
     <div class="slide_header">
-    <a href="#">WOMAN</a>
-    <a href="#">MEN</a>
-    <a href="#">KIDS</a>
-    <a href="#">ZAIRA ORIGINAL</a>
+    <a href="./index.html">WOMAN</a>
+    <a href="./men.html">MEN</a>
+    <a href="./kids.html">KIDS</a>
+
     </div>
     <div id="slide_roller">
       <p>NEW</p>
@@ -356,19 +373,22 @@
       <i>SPEACIAL PRICE</i>
       <p>GIFT IDEAS new</p>
       <h3>SPEACIAL EDITION</h3>
+      <h5>GIFT CARD</h5>
+      <h5>JOIN LIFE</h5>
+      <a href="./login.html">LOGIN</a>
     </div>
 </div>
   <!--navbar part-->
   <nav>
     <div>
     <h2 onclick="opennav()">|||</h2>
-    <h1>ZAIRA</h1>
+    <a href="./index.html"><h1>ZAIRA</h1></a>
     </div>
     <div>
-    <a href="#">SEARCH</a>
-    <a href="#"><p>LOGI IN</p></a>
-    <a href="#"><p>HELP</p></a>
-    <a href="#">
+    <a href="search.html">SEARCH</a>
+    <a href="login.html"><p>LOGI IN</p></a>
+    <a href="./help.html"><p>HELP</p></a>
+    <a href="./cart.html">
       <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bag-plus" viewBox="0 0 16 16">
         <path fill-rule="evenodd" d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z"/>
         <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/>
@@ -379,14 +399,14 @@
   <div class="bottom_part">
     <div>
     <a href="#NEW"><p>NEW</p></a>
-    <a href="#SHOES"><p>SHOES</p></a>
-    <a href="#COATS"><p>COATS|PUFFER JACKETS</p></a>
+    <a href="#COATS"><p>COATS</p></a>
+    <a href="#JACKETS"><p>PUFFER JACKETS</p></a>
     <a href="#MORE"><p>MORE</p></a>
     </div>
   </div>
   <!--middl section-->
   <div id="container">
-    <a href="D:\ps code\project\men.html"><h3>MEN >></h3></a>
+    <a href="./men.html"><h3>MEN >></h3></a>
     <div class="item" >
       <picture  onclick="opennav()" >
         <source media="(max-width:350px )" srcset="https://static.zara.net/photos///contents/mkt/spots/aw22-north-woman-new/subhome-xmedia-50//w/526/IMAGE-portrait-default-fill-6a2c5cd3-89c8-4a14-a438-b8b3dd146560-default_0.jpg?ts=1671035835698">
@@ -394,28 +414,28 @@
         <img src="https://static.zara.net/photos///contents/mkt/spots/aw22-north-woman-new/subhome-xmedia-50//w/1920/IMAGE-landscape-default-fill-6202be10-89aa-47bf-8d67-bca271b72adb-default_0.jpg?ts=1671035826261" alt="1">
       </picture>
     </div>
-    <div class="item">
+    <div id="NEW" class="item">
       <picture>
         <source media="(max-width:350px )" srcset="https://static.zara.net/photos///contents/mkt/spots/aw22-north-woman-coats/subhome-xmedia-50-2//w/434/IMAGE-portrait-vertical-2-default-fill-97a913f2-b846-4ac9-a2a7-9d7f38a3f743-default_0.jpg?ts=1671037131517">
         <source media="(max-width:770px )" srcset="https://static.zara.net/photos///contents/mkt/spots/aw22-north-woman-coats/subhome-xmedia-50-2//w/1046/IMAGE-portrait-ipad-default-fill-64c15206-2eb7-402f-b3d8-b63e4a53dbb1-default_0.jpg?ts=1671037081920">
         <img src="https://static.zara.net/photos///contents/mkt/spots/aw22-north-woman-coats/subhome-xmedia-50-2//w/1920/IMAGE-landscape-default-fill-02fbf935-677e-40ab-8fa1-1c60f122b18e-default_0.jpg?ts=1671037079704" alt="2">
       </picture>
     </div>
-    <div class="item">
+    <div id="COATS" class="item">
       <picture>
         <source media="(max-width:350px )" srcset="https://static.zara.net/photos///contents/mkt/spots/aw22-north-woman-beauty/subhome-xmedia-50-in//w/604/IMAGE-portrait-default-fill-ea0916c5-4627-4133-9f1c-d72bcd0ed585-default_0.jpg?ts=1671009040130">
         <source media="(max-width:770px )" srcset="https://static.zara.net/photos///contents/mkt/spots/aw22-north-woman-beauty/subhome-xmedia-50-in//w/1018/IMAGE-portrait-ipad-default-fill-2cb88f69-118d-4350-bd95-7009e376c768-default_0.jpg?ts=1671009063370">
         <img src="https://static.zara.net/photos///contents/mkt/spots/aw22-north-woman-beauty/subhome-xmedia-50-in//w/1920/IMAGE-landscape-default-fill-3bd9bfee-44d9-4c4f-954f-597bd16be7fb-default_0.jpg?ts=1671008986521" alt="3">
       </picture>
     </div>
-    <div class="item">
+    <div id="JACKETS" class="item">
       <picture>
         <source media="(max-width:350px )" srcset="https://static.zara.net/photos///contents/mkt/spots/aw22-north-woman-best-sellers/subhome-xmedia-38//w/752/IMAGE-portrait-fill-068ac455-76e1-4a37-bc3a-807a3e0a61ea-default_0.jpg?ts=1663579024814">
         <source media="(max-width:770px )" srcset="https://static.zara.net/photos///contents/mkt/spots/aw22-north-woman-best-sellers/subhome-xmedia-38//w/575/IMAGE-portrait-ipad-c6b5432e-9404-4d49-aaf7-bd3062ed2a94-default_0.jpg?ts=1663583214111">
         <img src="https://static.zara.net/photos///contents/mkt/spots/aw22-north-woman-best-sellers/subhome-xmedia-38//w/1920/IMAGE-landscape-fill-c68605f6-1f94-4830-8f4a-0f3bf22017e2-default_0.jpg?ts=1663579002306" alt="3">
       </picture>
     </div>
-    <div class="item">
+    <div id="MORE" class="item">
       <!--footer-->
       <div class="footer1">
         <div><h2>JOIN OUR NEWSLETTER</h2></div>
@@ -451,7 +471,6 @@
   function closenav(){
       document.getElementById("myslide").style.width="0"
   }
-
 
 </script>
 </html>

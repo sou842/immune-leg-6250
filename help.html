@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HELP</title>
+    <style>
+        *{
+          margin: 0;
+          padding: 0;
+        }
+        body{
+            font-family: 'Times New Roman', Times, serif;
+          font-family: Arial, Helvetica, sans-serif;
+        }
+        nav{
+          display: flex;
+          width: 100%;
+          top: 0;
+          z-index: 5;
+          position: fixed;
+          background-color: white;
+          justify-content: space-between;
+        }
+        nav > div:nth-child(1){
+          display: flex;
+          width: 280px;
+          justify-content: space-evenly;
+        }
+        nav > div:nth-child(1) > a{
+          text-decoration: none;
+          color: black;
+        }
+        nav > div:nth-child(1) > a > h1{
+          font-size: 70px;
+          font-weight: 200;
+        }
+        nav > div:nth-child(2){
+          display: flex;
+          width: 33%;
+          align-items: center;
+          justify-content: space-evenly;
+          font-family: Arial, Helvetica, sans-serif;
+        }
+        nav > div:nth-child(2) > a{
+          text-decoration: none;
+          color: black;
+        }
+        nav > div:nth-child(2) > a:nth-child(1){
+          width: 100px;
+          padding: 5px;
+          text-align: end;
+          border-bottom: 1px solid;
+        }
+        .slide{
+                    width:0px;
+                    height: 100%;
+                    background-color: rgb(255, 255, 255);
+                    position: fixed;
+                    top: 0;
+                    z-index: 10;
+                    overflow: hidden;
+                    transition: 0.5s;
+                }
+                .slide_header{
+                  margin: 1cm auto 0.5cm auto;
+                  width: 80%;
+                  display: flex;
+                  justify-content: space-evenly;
+                }
+                .slide > div > a{
+                  font-size: 18px;
+                  text-decoration: none;
+                  color: black;
+                }
+                #slide_roller{
+                  width: 80%;
+                  height: 78%;
+                  padding: 15px;
+                  display: block;
+                  overflow-y: scroll;
+                  margin: 0 20px;
+                  scroll-behavior: smooth ;
+                }
+                #slide_roller::-webkit-scrollbar{
+                  display: none;
+                }
+                #slide_roller > p{
+                  margin: 5px;
+                  font-size: 12px;
+                  font-family: Arial, Helvetica, sans-serif;
+                }
+                #slide_roller > i{
+                  color: rgb(252, 106, 130);
+                }
+                #slide_roller > h5{
+                  margin: 1cm 0;
+                  font-weight: 100;
+                }
+                .closebtn{
+                    float: right;
+                    margin: 0.7cm;
+                    text-decoration: none;
+                    font-size: 30px;
+                    color: black;
+                    font-family: Arial, Helvetica, sans-serif;
+                }
+                .openbtn{
+                    background-color: #111;
+                    cursor: pointer;
+                    color: white;
+                    padding: 15px;
+                    font-size: 20px;
+                }
+                #text{
+                    margin-top: 3.5cm;
+                    margin-bottom: 1cm;
+                    text-align: center;
+                }
+                .content{
+                    margin-top: 1cm;
+                    width: 90%;
+                    margin: auto;
+                    display: grid;
+                    gap: 35px;
+                    grid-template-columns: repeat(6,1fr);
+                    text-align: center;
+                }
+                .content > div{
+                    cursor: pointer;
+                }
+                img{
+                    display: block;
+                    margin: 20px auto;
+                    width: 30%;
+                }
+        </style>
+        <style>
+            @media screen and (min-width:451px) and (max-width:770px){
+            nav > div:nth-child(1) {
+              width: 250px;
+            }
+            nav > div:nth-child(2) {
+              display: flex;
+              flex-direction: column-reverse;
+              align-items: flex-end;
+              padding: 20px;
+            }
+            nav > div:nth-child(2) > a:nth-child(1){
+            width: 70px;
+            padding: 5px;
+            text-align: end;
+            border-bottom: 1px solid;
+          }
+          nav > div:nth-child(2) > a:nth-child(2){
+            display: none;
+          }
+          nav > div:nth-child(1) > h1{
+            font-size: 50px;
+            font-weight: 200;
+          }
+          nav > div:nth-child(2) > a{
+            text-decoration: none;
+            color: black;
+            font-size: 12px;
+          }
+          .content{
+            grid-template-columns: repeat(3,1fr);
+         }
+          
+          }
+          @media screen and (min-width:100px) and (max-width:450px){
+          nav > div:nth-child(1) {
+            width: 200px;
+          }
+          nav > div:nth-child(2) {
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: flex-end;
+            padding: 15px;
+          }
+            nav > div:nth-child(2) > a:nth-child(1){
+            width: 60px;
+            padding: 5px;
+            text-align: end;
+            border-bottom: 1px solid;
+          }
+            nav > div:nth-child(2) > a:nth-child(2){
+              display: none;
+            }
+            nav > div:nth-child(1) > a > h1{
+            font-size: 35px;
+            font-weight: 200;
+          }
+          nav > div:nth-child(2) > a{
+            text-decoration: none;
+            color: black;
+            font-size: 10px;
+          }
+          .content{
+            grid-template-columns: repeat(2,1fr);
+         }
+        }
+        </style>
+</head>
+<body>
+    <div id="myslide" class="slide">
+        <a href="#" class="closebtn" onclick="closenav()">X</a>
+        <div class="slide_header">
+        <a href="./index.html">WOMAN</a>
+        <a href="./men.html">MEN</a>
+        <a href="./kids.html">KIDS</a>
+        <!-- <a href="#">ZAIRA ORIGINAL</a> -->
+        </div>
+        <div id="slide_roller">
+          <p>NEW</p>
+          <p>PARTY</p>
+          <p>BEST SELLER new</p>
+          <p>BASIC</p>
+          <p>KNITWEAR</p>
+          <p>COAT | PUFFER JACKETS</p>
+          <p>DRESSES | JUMPSUITS</p>
+          <p>SHIRTS</p>
+          <p>TOPS</p>
+          <p>TROUSERS</p>
+          <p>JEANS</p>
+          <p>BLAZERS</p>
+          <p>JHACKETS | OVERSHIRTS</p>
+          <p>SWEATSHIRTS</p>
+          <P>T-SHIRTS</P>
+          <p>WAISTCOATS | GILETS</p>
+          <p>SKIRTS | SORTS</p>
+          <p>CO-ORD SHORTS</p>
+          <p>SUITS</p>
+          <p>ACCESSORIES</p>
+          <p>SHOES</p>
+          <p>BAGS</p>
+          <p>PERFUMES</p>
+          <p>BEAUTY</p>
+          <i>SPEACIAL PRICE</i>
+          <p>GIFT IDEAS new</p>
+          <h3>SPEACIAL EDITION</h3>
+          <h5>GIFT CARD</h5>
+          <h5>JOIN LIFE</h5>
+          <a href="./login.html">LOGIN</a>
+        </div>
+    </div>
+      <!--navbar part-->
+    <nav>
+        <div>
+        <h2 onclick="opennav()">|||</h2>
+        <a href="./index.html"><h1>ZAIRA</h1></a>
+        </div>
+        <div>
+        <a href="search.html">SEARCH</a>
+        <a href="login.html"><p>LOGI IN</p></a>
+        <a href="./cart.html">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bag-plus" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z"/>
+            <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/>
+          </svg>
+        </a>
+        </div>
+      </nav>
+
+      <!--content-->
+      <h2 id="text">HELP</h2>
+      <div class="content">
+        <div>
+            <img src="https://static.zara.net/photos///contents/mkt/misc/help/icons//icon-80-help-bag.svg?ts=1550654368093" alt="">
+            <p>SHOP AT ZARA.COM</p>
+        </div>
+        <div>
+            <img src="https://static.zara.net/photos///contents/mkt/misc/help/icons//icon-80-help-shipping.svg?ts=1550654368093" alt="">
+            <p>SHIPPING AND<br>ORDER STATUS</p>
+        </div>
+        <div>
+            <img src="https://static.zara.net/photos///contents/mkt/misc/help/icons//icon-80-help-returns.svg?ts=1550654368093" alt="">
+            <p>EXCHANGES AND<br>RETURNS</p>
+        </div>
+        <div>
+            <img src="https://static.zara.net/photos///contents/mkt/misc/help/icons//icon-80-help-payment.svg?ts=1550654368093" alt="">
+            <p>PAYMENT</p>
+        </div>
+        <div>
+            <img src="https://static.zara.net/photos///contents/mkt/misc/help/icons//icon-80-help-product.svg?ts=1550654368093" alt="">
+            <p>PRODUCT</p>
+        </div>
+        <div>
+            <img src="https://static.zara.net/photos///contents/mkt/misc/help/icons//icon-80-help-gift-card.svg?ts=1591250800807" alt="">
+            <p>GIFT CARD</p>
+        </div>
+        <div>
+            <img src="https://static.zara.net/photos///contents/mkt/misc/help/icons//icon-80-help-stores-and-company.svg?ts=1550654368093" alt="">
+            <p>SHOPS AND<br>COMPANY</p>
+        </div>
+        <div>
+            <img src="https://static.zara.net/photos///contents/mkt/misc/help/icons//icon-80-help-clothes-collection-info.svg?ts=1614071652367" alt="">
+            <p>CLOTHES<br>COLLECTION<br>PROGRAMME</p>
+        </div>
+        <div>
+            <img src="https://static.zara.net/photos///contents/mkt/misc/help/icons//icon-80-help-zara-id.svg?ts=1629805802513" alt="">
+            <p>ZARA QR</p>
+        </div>
+      </div>
+</body>
+<script>
+    function opennav(){
+    let match = window.matchMedia("(max-width:750px)").matches;
+
+    console.log(match)
+    if(match==false){
+      document.getElementById("myslide").style.width="40%";
+    }
+    else if(match==true){
+      document.getElementById("myslide").style.width="100%"
+    }
+  }
+
+  function closenav(){
+      document.getElementById("myslide").style.width="0"
+  }
+</script>
+</html>
