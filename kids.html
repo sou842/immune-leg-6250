@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZAIRA India I New Collection</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    nav{
+      display: flex;
+      width: 100%;
+      position: fixed;
+      justify-content: space-between;
+    }
+    nav > div:nth-child(1){
+      display: flex;
+      width: 280px;
+      justify-content: space-evenly;
+    }
+    nav > div:nth-child(1) > h1{
+      font-size: 70px;
+      font-weight: 200;
+    }
+    nav > div:nth-child(1)> h2{
+      cursor: pointer;
+    }
+    nav > div:nth-child(2){
+      display: flex;
+      width: 33%;
+      align-items: center;
+      justify-content: space-evenly;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    nav > div:nth-child(2) > a{
+      text-decoration: none;
+      color: black;
+    }
+    nav > div:nth-child(2) > a:nth-child(1){
+      width: 100px;
+      padding: 5px;
+      text-align: end;
+      border-bottom: 1px solid;
+    }
+    #container{
+      max-height: 100vh;
+      overflow: scroll;
+      scroll-snap-type: y mandatory;
+      display: block;
+    }
+    .item{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      /* font-size: 1vw; */
+      scroll-snap-align: start;
+      min-width: 98vw
+    }
+    img{
+      width: 100%;
+      height: 100%;
+    }
+    #container > a:nth-child(1){
+      position: fixed;
+      top: 50%;
+      bottom: 50%;
+      left: 1cm;
+      color: whitesmoke;
+      text-decoration: none;
+    }
+    #container > a > h3{
+      background-color: rgba(128, 128, 128, 0.479);
+      width: 100px;
+      text-align: center;
+      height: 50px;
+      box-sizing: border-box;
+      padding: 14px;
+      border-radius: 50%;
+      align-items: center;
+    }
+    .item::-webkit-scrollbar{
+      display: none;
+    }
+    #container::-webkit-scrollbar{
+      display: none;
+    }
+    body::-webkit-scrollbar{
+      display: none;
+    }
+    
+    .footer1{
+      width: 400px;
+      height: 300px;
+      font-size: 15px;
+      font-family: Arial, Helvetica, sans-serif;
+      margin: auto;
+
+    }
+    .footer1 > div:nth-child(1) > h2{
+      margin: 2.5cm 0;
+      text-align: center;
+    }
+    .footer1 > div:nth-child(2){
+      display: flex;
+      justify-content: space-evenly;
+    }
+    .footer1 > div:nth-child(2) > a{
+      text-decoration: none;
+      color: black;
+    }
+    .footer2{
+      font-size: 11px;
+      font-weight: 100;
+      font-family:Arial, Helvetica, sans-serif;
+      margin: 20px;
+    }
+    .item:nth-last-child(1){
+      align-items:initial;
+      flex-direction: column;
+      
+    }
+    
+    .bottom_part{
+      margin: auto;
+      width: 500px;
+    }
+    .bottom_part > div{
+      display: flex;
+      width: 500px;
+      justify-content: space-evenly;
+      position: fixed;
+      bottom: 1.5cm;
+    }
+    .bottom_part > div > a{
+      margin: 16px;
+      color: black;
+      text-decoration: none;
+    }
+    @media screen and (min-width:451px) and (max-width:770px){
+      nav > div:nth-child(1) {
+        width: 250px;
+      }
+      nav > div:nth-child(2) {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: flex-end;
+      }
+      nav > div:nth-child(2) > a:nth-child(1){
+      width: 70px;
+      padding: 5px;
+      text-align: end;
+      border-bottom: 1px solid;
+    }
+      nav > div:nth-child(2) > a:nth-child(2),
+      nav > div:nth-child(2) > a:nth-child(3){
+        display: none;
+      }
+      .bottom_part{
+        display: none;
+      }
+      nav > div:nth-child(1) > h1{
+      font-size: 50px;
+      font-weight: 200;
+    }
+    nav > div:nth-child(2) > a{
+      text-decoration: none;
+      color: black;
+      font-size: 12px;
+    }
+    .footer1{
+      width: 300px;
+      height: 260px;
+      font-size: 12px;
+    }
+    .footer1 > div:nth-child(1) > h2{
+      margin: 2cm 0;
+    }
+    .footer2{
+      font-size: 10px;
+      width: 250px;
+      font-weight: 100;
+      font-family:Arial, Helvetica, sans-serif;
+      margin: 10px;
+    }
+    #container > a:nth-child(1){
+      left: 10px;
+    }
+    #container > a > h3{
+      width: 80px;
+      height: 35px;
+      padding: 8px;
+      font-size: 15px;
+    }
+    }
+
+  
+    @media screen and (min-width:100px) and (max-width:450px){
+      nav > div:nth-child(1) {
+        width: 200px;
+      }
+      nav > div:nth-child(2) {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: flex-end;
+      }
+      nav > div:nth-child(2) > a:nth-child(1){
+      width: 60px;
+      padding: 5px;
+      text-align: end;
+      border-bottom: 1px solid;
+    }
+      nav > div:nth-child(2) > a:nth-child(2),
+      nav > div:nth-child(2) > a:nth-child(3){
+        display: none;
+      }
+      .container > div:nth-child(1){
+        image-orientation: flip;
+      }
+      .bottom_part{
+        display: none;
+      }
+      nav > div:nth-child(1) > h1{
+      font-size: 35px;
+      font-weight: 200;
+    }
+    nav > div:nth-child(2) > a{
+      text-decoration: none;
+      color: black;
+      font-size: 10px;
+    }
+    .footer1{
+      width: 250px;
+      height: 210px;
+      font-size: 10px;
+    }
+    .footer1 > div:nth-child(1) > h2{
+      margin: 2cm 0;
+    }
+    .footer2{
+      font-size: 8px;
+      width: 250px;
+      font-weight: 100;
+      font-family:Arial, Helvetica, sans-serif;
+      margin: 10px;
+    }
+    #container > a:nth-child(1){
+      left: 5px;
+    }
+    #container > a > h3{
+      width: 60px;
+      height: 30px;
+      padding: 5px;
+      font-size: 10px;
+    }
+    }
+    picture{
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+    <style>
+      .slide{
+                  width:0px;
+                  height: 100%;
+                  background-color: rgba(255, 255, 255, 0.815);
+                  position: fixed;
+                  z-index: 1;
+                  overflow: hidden;
+                  transition: 0.5s;
+              }
+              .slide_header{
+                margin: 1cm auto 0.5cm auto;
+                width: 80%;
+                display: flex;
+                justify-content: space-evenly;
+              }
+              .slide > div > a{
+                font-size: 18px;
+                text-decoration: none;
+                color: black;
+              }
+              #slide_roller{
+                width: 80%;
+                height: 78%;
+                padding: 15px;
+                display: block;
+                overflow-y: scroll;
+                margin: 0 20px;
+                scroll-behavior: smooth ;
+              }
+              #slide_roller::-webkit-scrollbar{
+                display: none;
+              }
+              #slide_roller > p{
+                margin: 5px;
+                font-size: 12px;
+                font-family: Arial, Helvetica, sans-serif;
+              }
+              #slide_roller > i{
+                color: rgb(252, 106, 130);
+              }
+              #slide_roller > h5{
+                margin: 1cm 0;
+                font-weight: 100;
+              }
+              .closebtn{
+                  float: right;
+                  margin: 0.7cm;
+                  text-decoration: none;
+                  font-size: 30px;
+                  color: black;
+                  font-family: Arial, Helvetica, sans-serif;
+              }
+              .openbtn{
+                  background-color: #111;
+                  cursor: pointer;
+                  color: white;
+                  padding: 15px;
+                  font-size: 20px;
+              }
+    </style>
+</head>
+<body>
+  <div id="myslide" class="slide">
+    <a href="#" class="closebtn" onclick="closenav()">X</a>
+    <div class="slide_header">
+    <a href="./index.html">WOMAN</a>
+    <a href="./men.html">MEN</a>
+    <a href="./kids.html">KIDS</a>
+    <!-- <a href="#">ZAIRA ORIGINAL</a> -->
+    </div>
+    <div id="slide_roller">
+      <p>NEW</p>
+      <p>PARTY</p>
+      <p>BEST SELLER new</p>
+      <p>BASIC</p>
+      <p>KNITWEAR</p>
+      <p>COAT | PUFFER JACKETS</p>
+      <p>DRESSES | JUMPSUITS</p>
+      <p>SHIRTS</p>
+      <p>TOPS</p>
+      <p>TROUSERS</p>
+      <p>JEANS</p>
+      <p>BLAZERS</p>
+      <p>JHACKETS | OVERSHIRTS</p>
+      <p>SWEATSHIRTS</p>
+      <P>T-SHIRTS</P>
+      <p>WAISTCOATS | GILETS</p>
+      <p>SKIRTS | SORTS</p>
+      <p>CO-ORD SHORTS</p>
+      <p>SUITS</p>
+      <p>ACCESSORIES</p>
+      <p>SHOES</p>
+      <p>BAGS</p>
+      <p>PERFUMES</p>
+      <p>BEAUTY</p>
+      <i>SPEACIAL PRICE</i>
+      <p>GIFT IDEAS new</p>
+      <h3>SPEACIAL EDITION</h3>
+      <h5>GIFT CARD</h5>
+      <h5>JOIN LIFE</h5>
+      <a href="./login.html">LOGIN</a>
+    </div>
+</div>
+  <!--nav bar-->
+  <nav>
+    <div>
+    <h2 onclick="opennav()">|||</h2>
+    <h1>ZAIRA</h1>
+    </div>
+    <div>
+      <a href="./search.html">SEARCH</a>
+    <a href="./login.html"><p>LOGI IN</p></a>
+    <a href="./help.html"><p>HELP</p></a>
+    <a href="./cart.html">
+      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bag-plus" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z"/>
+        <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/>
+      </svg>
+    </a>
+    </div>
+  </nav>
+  <div class="bottom_part">
+    <div>
+    <a href="#NEW"><p>NEW</p></a>
+    <a href="#GIRL"><p>GIRL</p></a>
+    <a href="#COATS"><p>NEW BORN</p></a>
+    <a href="#BABY_GIRL"><p>BABY GIRL</p></a>
+    <a href="#MORE"><p>MORE</p></a>
+    </div>
+  </div>
+
+  <div id="container">
+    <a href="./men.html"><h3> << MEN</h3></a>
+    <div id="NEW" class="item">
+      <picture>
+      <source media="(max-width:350px )" srcset="https://static.zara.net/photos///contents/mkt/spots/aw22-north-kids-babyboy/subhome-xmedia-50//w/556/IMAGE-portrait-fill-6337d144-91c2-4ffd-b007-8d4f9a0a853d-default_0.jpg?ts=1670935737176">
+      <source media="(max-width:770px )" srcset="https://static.zara.net/photos///contents/mkt/spots/aw22-north-kids-babyboy/subhome-xmedia-50//w/1048/IMAGE-portrait-ipad-fill-73bba69e-b0f5-480c-91f1-efaef420f6a1-default_0.jpg?ts=1670935728961">
+      <img src="https://static.zara.net/photos///contents/mkt/spots/aw22-north-kids-babyboy/subhome-xmedia-50//w/1920/IMAGE-landscape-fill-ff966491-7491-4c06-994e-ca71500b4c49-default_0.jpg?ts=1670935725138" alt="1">
+      </picture>
+    </div>
+    <div id="GIRL" class="item">
+      <picture>
+        <source media="(max-width: 350px)" srcset="https://static.zara.net/photos///contents/mkt/spots/aw22-north-kids-girl/subhome-xmedia-49-2//w/902/IMAGE-portrait-vertical-fill-7ddc9d5c-1cae-4943-b1a3-46a5dfba08dc-default_0.jpg?ts=1670573207883">
+        <source media="(max-width: 770px)" srcset="https://static.zara.net/photos///contents/mkt/spots/aw22-north-kids-girl/subhome-xmedia-49-2//w/960/IMAGE-portrait-ipad-fill-6973176e-119d-49f1-af5c-c007c12a4dfb-default_0.jpg?ts=1670573173583">
+        <img src="https://static.zara.net/photos///contents/mkt/spots/aw22-north-kids-girl/subhome-xmedia-49-2//w/1920/IMAGE-landscape-fill-5e46fc66-df6c-42a3-88ac-51b2d0e79e1f-default_0.jpg?ts=1670573133823" alt="2">
+      </picture>
+    </div>
+    <div id="COATS" class="item">
+      <picture>
+        <source media="(max-width: 350px)" srcset="https://static.zara.net/photos///contents/mkt/spots/aw22-north-kids-mini/subhome-xmedia-47//w/992/IMAGE-portrait-fill-50eb09b8-b37f-4ac2-97c8-f72c2d15d0cf-default_0.jpg?ts=1669384233204">
+        <source media="(max-width: 770px)" srcset="https://static.zara.net/photos///contents/mkt/spots/aw22-north-kids-mini/subhome-xmedia-47//w/960/IMAGE-portrait-ipad-fill-7d57189a-bccf-4b96-b6ea-2e8167959f10-default_0.jpg?ts=1669384231718">
+        <img src="https://static.zara.net/photos///contents/mkt/spots/aw22-north-kids-mini/subhome-xmedia-47//w/1920/IMAGE-landscape-fill-a8ada299-8dee-4702-abfa-b0d0040b4192-default_0.jpg?ts=1669384230932" alt="">
+      </picture>
+    </div>
+    <div id="BABY_GIRL" class="item">
+      <picture>
+        <source media="(max-width: 350px)" srcset="https://static.zara.net/photos///contents/mkt/spots/aw22-north-kids-babygirl/subhome-xmedia-50//w/666/IMAGE-portrait-vertical-2-fill-a7360705-a571-479e-a839-e29d84b2c2d3-default_0.jpg?ts=1670936971464">
+        <source media="(max-width: 770px)" srcset="https://static.zara.net/photos///contents/mkt/spots/aw22-north-kids-babygirl/subhome-xmedia-50//w/959/IMAGE-portrait-ipad-fill-fbdea614-313b-44bc-afe8-4efca4c201bb-default_0.jpg?ts=1670936962567">
+        <img src="https://static.zara.net/photos///contents/mkt/spots/aw22-north-kids-babygirl/subhome-xmedia-50//w/1920/IMAGE-landscape-fill-4c7367f4-222f-4e2a-a6a6-c5c7e22f903a-default_0.jpg?ts=1670936962182" alt="3">
+      </picture>
+    </div>
+    <div id="MORE" class="item">
+      <div class="footer1">
+        <div><h2>JOIN OUR NEWSLETTER</h2></div>
+          <div>
+            <a href="#"><p>INSTRAGRAM</p></a>
+            <a href="#"><p>FACEBOOK</p></a>
+            <a href="#"><p>TWITTER</p></a>
+            <a href="#"><p>YOUTUBE</p></a>
+          </div>
+      </div>
+      <div class="footer2">
+        <p>NAME AND ADDRESS OF THE MANUFACTURER: <br>
+          INDUSTRIA DE DISEf.10 TEXTIL, S.A. (INDITEX, s.A,) <br> 
+          AVENIDA DE LA DIPUTACIÖN, EDIFICIO INDITEX, 151 43, ARTEIXO (A CORUNA), SPAIN</p>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+
+  function opennav(){
+    let match = window.matchMedia("(max-width:750px)").matches;
+
+    console.log(match)
+    if(match==false){
+      document.getElementById("myslide").style.width="40%";
+    }
+    else if(match==true){
+      document.getElementById("myslide").style.width="100%"
+    }
+  }
+
+  function closenav(){
+      document.getElementById("myslide").style.width="0"
+  }
+
+</script>
+</html>

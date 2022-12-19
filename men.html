@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZAIRA India I New Collection</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    nav{
+      display: flex;
+      width: 100%;
+      position: fixed;
+      justify-content: space-between;
+      color: rgb(215, 215, 215);
+    }
+    nav > div:nth-child(1){
+      display: flex;
+      width: 300px;
+      justify-content: space-evenly;
+    }
+    nav > div:nth-child(1) > a{
+      text-decoration: none;
+      color: rgb(215, 215, 215);
+    }
+    nav > div:nth-child(1) > a > h1{
+      font-size: 70px;
+      font-weight: 200;
+    }
+    nav > div:nth-child(1)> h2{
+      cursor: pointer;
+    }
+    nav > div:nth-child(2){
+      display: flex;
+      width: 33%;
+      align-items: center;
+      justify-content: space-evenly;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    nav > div:nth-child(2) > a{
+      text-decoration: none;
+      color: rgb(147, 143, 143);
+    }
+    nav > div:nth-child(2) > a:nth-child(1){
+      width: 100px;
+      padding: 5px;
+      text-align: end;
+      border-bottom: 1px solid;
+    }
+    #container{
+      max-height: 100vh;
+      overflow: scroll;
+      scroll-snap-type: y mandatory;
+      display: block;
+    }
+    .item{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      /* font-size: 1vw; */
+      scroll-snap-align: start;
+      min-width: 98vw
+    }
+    img{
+      width: 100%;
+      height: 100%;
+    }
+    #container > a:nth-child(1){
+  position: fixed;
+  top: 50%;
+  bottom: 50%;
+  left: 1cm;
+  color: whitesmoke;
+  text-decoration: none;
+}
+#container > a:nth-child(2){
+  position: fixed;
+  top: 50%;
+  bottom: 50%;
+  right: 1cm;
+  color: whitesmoke;
+  text-decoration: none;
+}
+    #container > a > h3{
+      background-color: rgba(128, 128, 128, 0.479);
+      width: 100px;
+      text-align: center;
+      height: 40px;
+      box-sizing: border-box;
+      padding: 14px;
+      border-radius: 45%;
+      font-size: 13px;
+      align-items: center;
+    }
+    .item::-webkit-scrollbar{
+      display: none;
+    }
+    #container::-webkit-scrollbar{
+      display: none;
+    }
+    body::-webkit-scrollbar{
+      display: none;
+    }
+    
+    .footer1{
+      width: 400px;
+      height: 300px;
+      font-size: 15px;
+      font-family: Arial, Helvetica, sans-serif;
+      margin: auto;
+    }
+    .footer1 > div:nth-child(1) > h2{
+      margin: 2.5cm 0;
+      text-align: center;
+    }
+    .footer1 > div:nth-child(2){
+      display: flex;
+      justify-content: space-evenly;
+    }
+    .footer1 > div:nth-child(2) > a{
+      text-decoration: none;
+      color: black;
+    }
+    .footer2{
+      font-size: 11px;
+      font-weight: 100;
+      font-family:Arial, Helvetica, sans-serif;
+      margin: 20px;
+    }
+    .item:nth-last-child(1){
+      align-items:initial;
+      flex-direction: column;
+      
+    }
+    
+    .bottom_part{
+      margin: auto;
+      width: 500px;
+    }
+    .bottom_part > div{
+      display: flex;
+      width: 500px;
+      justify-content: space-evenly;
+      position: fixed;
+      bottom: 1.5cm;
+    }
+    .bottom_part > div > a{
+      margin: 16px;
+      color: rgb(255, 255, 255);
+      text-decoration: none;
+    }
+    @media screen and (min-width:451px) and (max-width:770px){
+      nav > div:nth-child(1) {
+        width: 250px;
+      }
+      nav > div:nth-child(1) > h1{
+      font-size: 50px;
+      font-weight: 200;
+    }
+    nav > div:nth-child(2) > a{
+      text-decoration: none;
+      color: black;
+      font-size: 12px;
+    }
+      nav > div:nth-child(2) {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: flex-end;
+      }
+      nav > div:nth-child(2) > a:nth-child(1){
+      width: 70px;
+      padding: 5px;
+      text-align: end;
+      border-bottom: 1px solid;
+    }
+      nav > div:nth-child(2) > a:nth-child(2),
+      nav > div:nth-child(2) > a:nth-child(3){
+        display: none;
+      }
+      .bottom_part{
+        display: none;
+      }
+    nav > div:nth-child(2) > a{
+      text-decoration: none;
+      color: black;
+      font-size: 12px;
+    }
+    .footer1{
+      width: 350px;
+      height: 260px;
+      font-size: 12px;
+    }
+    .footer1 > div:nth-child(1) > h2{
+      margin: 2cm 0;
+    }
+    .footer2{
+      font-size: 10px;
+      width: 250px;
+      font-weight: 100;
+      font-family:Arial, Helvetica, sans-serif;
+      margin: 10px;
+    }
+    #container > a:nth-child(1){
+      left: 12px;
+
+    }
+    #container > a:nth-child(2){
+      right: 12px;
+    }
+    #container > a > h3{
+      width: 80px;
+      height: 35px;
+      padding: 9px;
+      font-size: 11px;
+    }
+    }
+
+  
+    @media screen and (min-width:100px) and (max-width:450px){
+      nav > div:nth-child(1) {
+        width: 200px;
+      }
+      nav > div:nth-child(2) {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: flex-end;
+      }
+      nav > div:nth-child(2) > a:nth-child(1){
+      width: 60px;
+      padding: 5px;
+      text-align: end;
+      border-bottom: 1px solid;
+    }
+      nav > div:nth-child(2) > a:nth-child(2),
+      nav > div:nth-child(2) > a:nth-child(3){
+        display: none;
+      }
+      .container > div:nth-child(1){
+        image-orientation: flip;
+      }
+      .bottom_part{
+        display: none;
+      }
+      nav > div:nth-child(1) > a > h1{
+      font-size: 35px;
+      font-weight: 200;
+    }
+    nav > div:nth-child(2) > a{
+      text-decoration: none;
+      color: grey;
+      font-size: 10px;
+    }
+    .footer1{
+      width: 250px;
+      height: 210px;
+      font-size: 10px;
+    }
+    .footer1 > div:nth-child(1) > h2{
+      margin: 2cm 0;
+    }
+    .footer2{
+      font-size: 8px;
+      width: 250px;
+      font-weight: 100;
+      font-family:Arial, Helvetica, sans-serif;
+      margin: 10px;
+    }
+    #container > a:nth-child(1){
+      right: 5px;
+    }
+    #container > a > h3{
+      width: 40px;
+      height: 25px;
+      padding: 5px;
+      font-size: 10px;
+    }
+    #container > a:nth-child(1){
+      left: 12px;
+    }
+    #container > a:nth-child(2){
+      right: 12px;
+    }
+    #container > a > h3{
+      width: 80px;
+      height: 35px;
+      padding: 11px;
+      font-size: 9px;
+    }
+    }
+    picture{
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+
+<style>
+  .slide{
+              width:0px;
+              height: 100%;
+              background-color: rgba(255, 255, 255, 0.86);
+              position: fixed;
+              z-index: 1;
+              overflow: hidden;
+              transition: 0.5s;
+          }
+          .slide_header{
+            margin: 1cm auto 0.5cm auto;
+            width: 80%;
+            display: flex;
+            justify-content: space-evenly;
+          }
+          .slide > div > a{
+            font-size: 18px;
+            text-decoration: none;
+            color: black;
+          }
+          #slide_roller{
+            width: 80%;
+            height: 78%;
+            padding: 15px;
+            display: block;
+            overflow-y: scroll;
+            margin: 0 20px;
+            scroll-behavior: smooth ;
+          }
+          #slide_roller::-webkit-scrollbar{
+            display: none;
+          }
+          #slide_roller > p{
+            margin: 5px;
+            font-size: 12px;
+            font-family: Arial, Helvetica, sans-serif;
+          }
+          #slide_roller > i{
+            color: rgb(252, 106, 130);
+          }
+          #slide_roller > h5{
+            margin: 1cm 0;
+            font-weight: 100;
+          }
+          .closebtn{
+              float: right;
+              margin: 0.7cm;
+              text-decoration: none;
+              font-size: 30px;
+              color: black;
+              font-family: Arial, Helvetica, sans-serif;
+          }
+          .openbtn{
+              background-color: #111;
+              cursor: pointer;
+              color: white;
+              padding: 15px;
+              font-size: 20px;
+          }
+</style>
+</head>
+<body>
+  <div id="myslide" class="slide">
+    <a href="#" class="closebtn" onclick="closenav()">X</a>
+    <div class="slide_header">
+    <a href="./index.html">WOMAN</a>
+    <a href="./men.html">MEN</a>
+    <a href="./kids.html">KIDS</a>
+    </div>
+    <div id="slide_roller">
+      <p>NEW</p>
+      <p>PARTY</p>
+      <p>BEST SELLER new</p>
+      <p>BASIC</p>
+      <p>KNITWEAR</p>
+      <p>COAT | PUFFER JACKETS</p>
+      <p>DRESSES | JUMPSUITS</p>
+      <p>SHIRTS</p>
+      <p>TOPS</p>
+      <p>TROUSERS</p>
+      <p>JEANS</p>
+      <p>BLAZERS</p>
+      <p>JHACKETS | OVERSHIRTS</p>
+      <p>SWEATSHIRTS</p>
+      <P>T-SHIRTS</P>
+      <p>WAISTCOATS | GILETS</p>
+      <p>SKIRTS | SORTS</p>
+      <p>CO-ORD SHORTS</p>
+      <p>SUITS</p>
+      <p>ACCESSORIES</p>
+      <p>SHOES</p>
+      <p>BAGS</p>
+      <p>PERFUMES</p>
+      <p>BEAUTY</p>
+      <i>SPEACIAL PRICE</i>
+      <p>GIFT IDEAS new</p>
+      <h3>SPEACIAL EDITION</h3>
+      <h5>GIFT CARD</h5>
+      <h5>JOIN LIFE</h5>
+      <a href="./login.html">LOGIN</a>
+    </div>
+</div>
+  <!--nav bar-->
+  <nav>
+    <div>
+    <h2 onclick="opennav()">|||</h2>
+    <a href="./index.html"><h1>ZAIRA</h1></a>
+    </div>
+    <div>
+      <a href="./search.html">SEARCH</a>
+    <a href="./login.html"><p>LOGI IN</p></a>
+    <a href="./help.html"><p>HELP</p></a>
+    <a href="./cart.html">
+      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bag-plus" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z"/>
+        <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/>
+      </svg>
+    </a>
+    </div>
+  </nav>
+  <div class="bottom_part">
+    <div>
+    <a href="#NEW"><p>NEW</p></a>
+    <a href="#SHOES"><p>SHOES</p></a>
+    <a href="#COATS"><p>COATS|PUFFER JACKETS</p></a>
+    <a href="#MORE"><p>MORE</p></a>
+    </div>
+  </div>
+
+  <div id="container">
+    <a href="./index.html"><h3> <+ WOMEN </h3></a>
+    <a href="./kids.html"><h3> KIDS +></h3></a>
+    <div class="item">
+      <picture>
+        <source media="(max-width: 350px)" srcset="https://static.zara.net/photos///contents/mkt/spots/aw22-north-man-edition/subhome-xmedia-w47//w/698/IMAGE-portrait-vertical-2-fill-750a553d-f75e-4db0-b429-cb0452341c9c-default_0.jpg?ts=1669384797632">
+        <source media="(max-width: 770px)" srcset="https://static.zara.net/photos///contents/mkt/spots/aw22-north-man-edition/subhome-xmedia-w47//w/1536/IMAGE-portrait-ipad-fill-8d30d52c-482d-4e69-ac92-75198edb0c8d-default_0.jpg?ts=1669384779542">
+        <img src="https://static.zara.net/photos///contents/mkt/spots/aw22-north-man-edition/subhome-xmedia-w47//w/1920/IMAGE-landscape-fill-88c5ba6c-832e-442e-878f-48b60c0c8aa7-default_0.jpg?ts=1669457412950" alt="2">
+      </picture>
+    </div>
+
+    <div class="item">
+      <picture>
+        <source media="(max-width: 350px)" srcset="https://static.zara.net/photos///contents/mkt/spots/aw22-man-north-shoesandbags/subhome-xmedia-48//w/1118/IMAGE-portrait-fill-1828e266-9951-47e0-9e9a-e3f3390d323d-default_0.jpg?ts=1669655005203">
+        <source media="(max-width: 770px)" srcset="https://static.zara.net/photos///contents/mkt/spots/aw22-man-north-shoesandbags/subhome-xmedia-48//w/2106/IMAGE-portrait-ipad-fill-bc905f12-a139-42ca-ae49-52e024015bbb-default_0.jpg?ts=1669655005793">
+        <img src="https://static.zara.net/photos///contents/mkt/spots/aw22-man-north-shoesandbags/subhome-xmedia-48//w/2724/IMAGE-landscape-fill-b24b0454-105d-41bd-80f4-604d93d15bb3-default_0.jpg?ts=1669655003956" alt="">
+      </picture>
+    </div>
+    
+    <div class="item">
+      <picture>
+        <source media="(max-width: 350px)" srcset="https://static.zara.net/photos///contents/mkt/spots/aw22-north-man-party/subhome-xmedia-48//w/864/IMAGE-portrait-vertical-fill-82237e69-5fdd-4aaf-821f-aaddbb32347f-default_0.jpg?ts=1669710477268">
+        <source media="(max-width: 770px)" srcset="https://static.zara.net/photos///contents/mkt/spots/aw22-north-man-party/subhome-xmedia-48//w/1446/IMAGE-portrait-ipad-fill-85f507c6-43b5-44ed-adff-34c5a6329f7f-default_0.jpg?ts=1669710473967">
+        <img src="https://static.zara.net/photos///contents/mkt/spots/aw22-north-man-party/subhome-xmedia-48//w/1920/IMAGE-portrait-ipad-fill-85f507c6-43b5-44ed-adff-34c5a6329f7f-default_0.jpg?ts=1669710473967" alt="">
+      </picture>
+    </div>
+    <div class="item">
+      <picture>
+        <source media="(max-width: 350px)" srcset="https://static.zara.net/photos///contents/mkt/spots/aw22-north-man-athleticz/subhome-xmedia-50//w/744/IMAGE-portrait-vertical-2-fill-5ab08b3a-9890-4890-82b3-9b390421b0c9-default_0.jpg?ts=1670844316832">
+        <source media="(max-width: 770px)" srcset="https://static.zara.net/photos///contents/mkt/spots/aw22-north-man-athleticz/subhome-xmedia-50//w/1536/IMAGE-portrait-ipad-fill-cea88d5f-5772-4579-bc55-c8628fa543ca-default_0.jpg?ts=1670844314151">
+        <img src="https://static.zara.net/photos///contents/mkt/spots/aw22-north-man-athleticz/subhome-xmedia-50//w/1920/IMAGE-landscape-fill-8461d8f6-aa20-4b7c-bf56-ddbfe1ab66ea-default_0.jpg?ts=1670844315727" alt="1">
+      </picture>
+    </div>
+
+    <div class="item">
+      <div class="footer1">
+        <div><h2>JOIN OUR NEWSLETTER</h2></div>
+          <div>
+            <a href="#"><p>INSTRAGRAM</p></a>
+            <a href="#"><p>FACEBOOK</p></a>
+            <a href="#"><p>TWITTER</p></a>
+            <a href="#"><p>YOUTUBE</p></a>
+          </div>
+      </div>
+      <div class="footer2">
+        <p>NAME AND ADDRESS OF THE MANUFACTURER: <br>
+          INDUSTRIA DE DISEf.10 TEXTIL, S.A. (INDITEX, s.A,) <br> 
+          AVENIDA DE LA DIPUTACIÖN, EDIFICIO INDITEX, 151 43, ARTEIXO (A CORUNA), SPAIN</p>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+
+  function opennav(){
+    let match = window.matchMedia("(max-width:750px)").matches;
+
+    console.log(match)
+    if(match==false){
+      document.getElementById("myslide").style.width="40%";
+    }
+    else if(match==true){
+      document.getElementById("myslide").style.width="100%"
+    }
+  }
+
+  function closenav(){
+      document.getElementById("myslide").style.width="0"
+  }
+
+</script>
+</html>

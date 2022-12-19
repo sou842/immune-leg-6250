@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZAIRA SREACH</title>
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    nav{
+      display: flex;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      justify-content: space-between;
+    }
+    nav > div:nth-child(1){
+      display: flex;
+      width: 280px;
+      height: 100px;
+      justify-content: space-evenly;
+    }
+    nav > div:nth-child(1) > a > h1{
+      font-size: 70px;
+      font-weight: 200;
+    }
+    nav > div:nth-child(1) > a{
+        text-decoration: none;
+        color: black;
+    }
+    nav > div:nth-child(2){
+      display: flex;
+      width: 33%;
+      align-items: center;
+      justify-content: space-evenly;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    nav > div:nth-child(2) > a{
+      text-decoration: none;
+      color: black;
+    }
+    nav > div:nth-child(2) > a:nth-child(1){
+      width: 100px;
+      padding: 5px;
+      text-align: end;
+      border-bottom: 1px solid;
+    }
+    </style>
+        <style>
+            .catagory{
+                margin-top: 2cm;
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
+            .catagory > a{
+              text-decoration: none;
+              color: black;
+            }
+            .catagory > a > p{
+                margin: 15px;
+                cursor: pointer;
+            }
+            #search{
+                display: block;
+                width: 95%;
+                height: 40px;
+                margin: 1.5cm auto;
+                border: 0;;
+                border-bottom: 1px solid black;
+                color: rgb(43, 41, 41);
+                font-size: 17px;
+                text-transform:uppercase;
+                font-weight: 100;
+            }
+            #search::placeholder{
+                color: rgb(43, 41, 41);
+                font-size: 16px;
+                text-transform: capitalize;
+
+            }
+        </style>
+            <style>
+                #container{
+                    width: 80%;
+                    margin: auto;
+                      display: grid;
+                      grid-template-columns: repeat(3,1fr);
+                      gap: 40px;
+                  }
+                  #container > div > img{
+                      width: 300px;
+                      height: 350px;
+                      display: block;
+                      margin: auto;
+                  }
+                  #search-btn{
+                    margin: 1cm auto;
+                    display: block;
+                    width: 250px;
+                    height: 40px;
+                    background-color: black;
+                    border-radius: 3px;
+                    color: whitesmoke;
+                  }
+</style>
+<style>
+    @media screen and (min-width:451px) and (max-width:770px){
+      nav > div:nth-child(1) {
+        width: 250px;
+      }
+      nav > div:nth-child(2) {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: flex-end;
+        padding: 20px;
+      }
+      nav > div:nth-child(2) > a:nth-child(1){
+      width: 70px;
+      padding: 5px;
+      text-align: end;
+      border-bottom: 1px solid;
+    }
+      nav > div:nth-child(2) > a:nth-child(2),
+      nav > div:nth-child(2) > a:nth-child(3){
+        display: none;
+      }
+      .bottom_part{
+        display: none;
+      }
+      nav > div:nth-child(1)> a > h1{
+      font-size: 50px;
+      font-weight: 200;
+    }
+    nav > div:nth-child(2) > a{
+      text-decoration: none;
+      color: black;
+      font-size: 12px;
+    }
+    #container{
+        grid-template-columns: repeat(2,1fr);
+    }
+    #search-btn{
+        width: 250px;
+    }
+    }
+
+  
+    @media screen and (min-width:100px) and (max-width:450px){
+      nav > div:nth-child(1) {
+        width: 200px;
+      }
+      nav > div:nth-child(2) {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: flex-end;
+        padding: 15px;
+      }
+      nav > div:nth-child(2) > a:nth-child(1){
+      width: 60px;
+      padding: 5px;
+      text-align: end;
+      border-bottom: 1px solid;
+    }
+      nav > div:nth-child(2) > a:nth-child(2),
+      nav > div:nth-child(2) > a:nth-child(3){
+        display: none;
+      }
+      .container > div:nth-child(1){
+        image-orientation: flip;
+      }
+      .bottom_part{
+        display: none;
+      }
+      nav > div:nth-child(1) > a > h1{
+      font-size: 35px;
+      font-weight: 200;
+    }
+    nav > div:nth-child(2) > a{
+      text-decoration: none;
+      color: black;
+      font-size: 10px;
+    }
+    #container{
+        grid-template-columns: repeat(1,1fr);
+    }
+    #search-btn{
+        width: 50%;
+        font-size: 12px;
+    }
+    .catagory > p{
+        margin: 20px 4px;
+        cursor: pointer;
+    }
+}
+</style>
+</head>
+<body>
+    <!--nav bar-->
+    <nav>
+        <div>
+        <h2 onclick="opennav()">|||</h2>
+        <a href="./index.html"><h1>ZAIRA</h1></a>
+        </div>
+        <div>
+        <a href="./search.html">SEARCH</a>
+        <a href="./login.html"><p>LOGI IN</p></a>
+        <a href="./help.html"><p>HELP</p></a>
+        <a href="./cart.html">
+          <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bag-plus" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z"/>
+            <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/>
+          </svg>
+        </a>
+        </div>
+      </nav>
+      <!--catagory section-->
+      <div class="catagory">
+        <a href="./index.html"><p>WOMAN</p></a>
+        <a href="./men.html"><p>MEN</p></a>
+        <a href="./kids.html"><p>KIDS</p></a>
+      </div>
+      <input type="text" id="search" placeholder="ENTER SEARCH ITEMS"/>
+      <button id="search-btn">SEARCH</button>
+      <!---data part-->
+      <div id="container"></div>
+</body>
+
+<script>
+    let content = document.getElementById("container");
+    let text = document.getElementById("search");
+    let sbtn = document.getElementById("search-btn");
+    let arr = ["./product.html","./men.html"];
+
+    sbtn.addEventListener("click",searche)
+    function searche(){    
+      fetch("shop.json")
+    .then((ele)=>{
+        return ele.json();
+    })
+    .then((data)=>{
+
+        display(data[text.value]);
+    })
+    .catch((error)=>{
+        console.log(error);
+
+    })
+
+      function display(data){
+        content.innerHTML = null;
+        console.log(data)
+        data.forEach((element) => {
+          console.log(element)
+          let div = document.createElement("div");
+          let div2 = document.createElement("div");
+          let name = document.createElement("p");
+          let price = document.createElement("p");
+          let catagory = document.createElement("h2");
+          let image = document.createElement("img");
+
+          div.style.textAlign = "center";
+          div2.style.padding = "15px";
+          name.innerText = element.name;
+          price.innerText = element.price;
+          name.style.margin = "10px";
+          catagory.innerText =element.catagory;
+          image.src = element.img;
+          content.style.display = "grid";
+          content.style.fontWeight = "100";
+          content.style.fontSize = "12px";
+          content.style.fontFamily = "Arial, Helvetica, sans-serif";
+          image.style.width = "100%";
+
+
+          image.addEventListener("click",()=>{
+
+          let product = JSON.parse(localStorage.getItem("key"))||[];
+
+          product.push(element)
+          localStorage.setItem("key",JSON.stringify(product));
+          open("./product.html")
+          console.log(product)
+        })
+          div2.append(name,price)
+          div.append(image,name,price)
+          content.append(div)
+        })
+    }
+    }
+</script>
+</html>
